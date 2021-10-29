@@ -1,9 +1,10 @@
 package com.joao.normando.springSocket.Controller;
 
 
-import ch.qos.logback.core.net.server.Client;
+import com.joao.normando.springSocket.model.Client;
 import com.joao.normando.springSocket.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,7 +15,6 @@ import java.util.Optional;
 public class ClientController {
 
     @Autowired
-
     private ClientRepository clientRepository;
     @GetMapping("/client")
     public List<Client> index() {
@@ -22,7 +22,7 @@ public class ClientController {
         return Client;
     }
 
-    @PostMapping ("/client/salvar")
+    @PostMapping ("/client/save")
     public void Save (@RequestBody Client client) {
         clientRepository.save(client);
     }
@@ -35,4 +35,5 @@ public class ClientController {
        }
         return client.get();
     }
+
 }
