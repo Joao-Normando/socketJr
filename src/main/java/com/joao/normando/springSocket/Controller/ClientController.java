@@ -4,7 +4,6 @@ package com.joao.normando.springSocket.Controller;
 import com.joao.normando.springSocket.model.Client;
 import com.joao.normando.springSocket.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 public class ClientController {
+
 
     @Autowired
     private ClientRepository clientRepository;

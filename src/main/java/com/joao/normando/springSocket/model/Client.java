@@ -29,9 +29,6 @@ public class Client implements Serializable {
     private String low;
 
     public Client() {
-    }
-
-    public Client( LocalDateTime data, String name, String state, Integer bravery, String low) {
         this.data = data;
         this.name = name;
         this.state = state;
@@ -45,6 +42,11 @@ public class Client implements Serializable {
         if (!(o instanceof Client)) return false;
         Client client = (Client) o;
         return Objects.equals(id, client.id) && Objects.equals(name, client.name);
+    }
+
+    @Override
+    public String toString() {
+        return  "| 001 | "+ id + " | 002 | " + data + " | 003 | " + name + " | 004 | "+ state + " | 005 | " + bravery + " | 006 | "+ low + " |";
     }
 
     @Override
