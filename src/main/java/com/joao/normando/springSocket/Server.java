@@ -1,7 +1,4 @@
 package com.joao.normando.springSocket;
-
-import org.apache.catalina.authenticator.Constants;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;

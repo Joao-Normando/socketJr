@@ -7,7 +7,6 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.logging.Level;
@@ -18,7 +17,6 @@ public class ClientSocket implements Runnable {
     private Socket server = null;
     private DataInputStream in = null;
     private DataOutputStream out = null;
-    private boolean endOfRequests = false;
     private int ID_CLIENT;
 
     public ClientSocket(int id) {
@@ -36,26 +34,8 @@ public class ClientSocket implements Runnable {
 
     public void clientReadRequest() {
         try {
-            //sending request to read a file
-            out.writeUTF("123");
-            /*
-            //sending file name
-            out.writeUTF(Constants.CLIENT + this.ID_CLIENTE + ".txt");
-            //waiting for server response - File exists
-            String response = in.readUTF();
 
-            if (response.equalsIgnoreCase("File not found.")) {
-                out.writeUTF("" + Constants.END_OF_REQUEST);
-            } else {
-                while (true) {
-                    System.out.println("====Reading file====\n\n");
-                    String line = in.readUTF();
-                    if (line.equals("***")) {
-                        break;
-                    } else
-                        System.out.println(line);
-                }
-            }*/
+            out.writeUTF("| 001 | 10032019 | 002 | 50186 | 003 | Raul Seixas | 004 | Rio de Janeiro | 005 | 0000015000 | 006 | SRF001 |");
         } catch (IOException ie) {
 
         }
@@ -98,6 +78,5 @@ public class ClientSocket implements Runnable {
         System.out.println("Ending main class.");
 
     }
-
 
 }
