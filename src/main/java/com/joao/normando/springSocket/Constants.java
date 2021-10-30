@@ -5,7 +5,6 @@ public class Constants {
 
     public static final String IP = "localhost";
     public static int SOCKET_PORT = 5551;
-    public static final int READ_FILE = 1;
 
 
 }

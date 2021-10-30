@@ -35,19 +35,12 @@ public class ClientSocket implements Runnable {
     public void clientReadRequest() {
         try {
 
-            out.writeUTF("| 001 | 10032019 | 002 | 50186 | 003 | Raul Seixas | 004 | Rio de Janeiro | 005 | 0000015000 | 006 | SRF001 |");
+            out.writeUTF("| 001 | 20032019 | 002 | 40186 | 003 | Diogo Nogueira | 004 | Rio de Janeiro | 005 | 0000014000 | 006 | SRF002 |");
         } catch (IOException ie) {
 
         }
     }
-    public void sendRequest(int requestType){
 
-        switch(requestType){
-            case Constants.READ_FILE:
-                clientReadRequest();
-                break;
-        }
-    }
 
     public void run() {
 
@@ -58,7 +51,8 @@ public class ClientSocket implements Runnable {
         } catch (IOException ex) {
             System.out.println("Could not connect to server.");
         }
-        sendRequest(Constants.READ_FILE);
+        clientReadRequest();
+
 
         try {
             server.close();
